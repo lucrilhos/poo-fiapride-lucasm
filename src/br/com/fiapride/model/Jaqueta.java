@@ -1,6 +1,7 @@
 package br.com.fiapride.model;
 
-public class Jaqueta {
+// Pra ficar mais próximo do comercial, implementar classe 'Promoção' em uma jaqueta a venda
+public class Jaqueta implements Promoção {
 	// Fazendo encapsulamento
     private String modelo;
     private String cor;
@@ -17,6 +18,16 @@ public class Jaqueta {
         this.cor = cor;
         this.tamanho = tamanho;
         setPreco(preco); // Usamos o setter para aproveitar a validação que já criamos!
+    }
+    
+    @Override
+    public void aplicarCupom(String cupom) {
+        if (cupom.equals("BEN10")) {
+            this.preco -= this.preco * 0.10;
+            System.out.println("Cupom aplicado Novo preço: R$ " + this.preco);
+        } else {
+            System.out.println("Cupom inválido ou não existe");
+        }
     }
 
     // Getters e Setters
