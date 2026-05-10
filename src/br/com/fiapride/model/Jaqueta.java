@@ -33,21 +33,31 @@ public abstract class Jaqueta implements Promoção { // adição do abstract
     }
 
     // Getters e Setters
-    public String getModelo() { return modelo; }
-    public void setModelo(String modelo) { this.modelo = modelo; }
+    public String getModelo() { 
+    	return modelo; 
+    	}
+    public void setModelo(String modelo) { 
+    	this.modelo = modelo; 
+    	}
 
-    public String getCor() { return cor; }
+    public String getCor() {
+    	return cor; 
+    }
     public void setCor(String cor) { this.cor = cor; }
 
-    public String getTamanho() { return tamanho; }
-    public void setTamanho(String tamanho) { this.tamanho = tamanho; }
+    public String getTamanho() { 
+    	return tamanho; 
+    	}
+    public void setTamanho(String tamanho) {
+    	this.tamanho = tamanho; 
+    	}
 
     public double getPreco() { return preco; }
     public void setPreco(double preco) {
         if (preco >= 0) {
             this.preco = preco;
         } else {
-            System.out.println("Erro: Preço inválido!");
+            System.out.println("Preço inválido!");
         }
     }
 
@@ -59,6 +69,6 @@ public abstract class Jaqueta implements Promoção { // adição do abstract
     }
 
     public String verificarCategoria() {
-        return (this.preco > 500.0) ? "Premium" : "Padrão";
+        return (this.preco > 500.0) ? "Luxo" : "Barata";
     }
 }

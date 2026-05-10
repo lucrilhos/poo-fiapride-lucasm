@@ -11,15 +11,15 @@ public class CamisetaOversized extends Jaqueta {
   
     @Override
     public void instrucoesLavagem() {
-        System.out.println("Lavar com água fria para não encolher e nem criar bolinha " + this.caimento);
+        System.out.println("Dica de Lavagem: Lavar com água fria. Preserva o caimento e não dá bolinha: " + this.caimento);
     }
 
     @Override
     public String verificarCategoria() {
         if (this.getPreco() > 200.0) {
-            return "Categoria: Premium Streetwear";
+            return "Categoria: Streetwear High Fashion";
         } else {
-            return "Categoria: Streetwear Essencial";
+            return "Categoria: Streetwear de pobre";
         }
     }
 
