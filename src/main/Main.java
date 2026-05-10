@@ -6,23 +6,19 @@ public class Main {
     public static void main(String[] args) {
         Jaqueta minhaJaqueta = new Jaqueta();
         
-        minhaJaqueta.modelo = "Corta-vento";
-        minhaJaqueta.cor = "Preta";
-        minhaJaqueta.tamanho = "G";
-        minhaJaqueta.preco = 600.00;
+        minhaJaqueta.setModelo("Puffer");
+        minhaJaqueta.setCor("Magenta");
+        minhaJaqueta.setTamanho("XL");
+        minhaJaqueta.setPreco(550.00);
 
-        // Validação exigida na Aula 2
-        if (minhaJaqueta.preco < 0) {
-            System.out.println("Erro: Preço inválido.");
-        } else {
-            System.out.println("=== Detalhes da Jaqueta ===");
-            System.out.println("Modelo: " + minhaJaqueta.modelo);
-            System.out.println("Preço Original: R$ " + minhaJaqueta.preco);
-            
-            // Testando os métodos
-            minhaJaqueta.aplicarDesconto(10);
-            System.out.println("Preço com Desconto (10%): R$ " + minhaJaqueta.preco);
-            System.out.println("Status: " + minhaJaqueta.verificarCategoria());
-        }
+        System.out.println("=== FiapRide: Cadastro Encapsulado ===");
+        
+        System.out.println("Modelo: " + minhaJaqueta.getModelo());
+        System.out.println("Preço Inicial: R$ " + minhaJaqueta.getPreco());
+        System.out.println("Status: " + minhaJaqueta.verificarCategoria());
+
+        // Testando o desconto
+        minhaJaqueta.aplicarDesconto(10);
+        System.out.println("Preço após 10% de desconto: R$ " + minhaJaqueta.getPreco());
     }
 }
