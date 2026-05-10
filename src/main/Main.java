@@ -1,22 +1,22 @@
 package main;
 
+import br.com.fiapride.model.Jaqueta;
 import br.com.fiapride.model.CamisetaOversized;
 
 public class Main {
     public static void main(String[] args) {
-        // Classe filha
-        CamisetaOversized co = new CamisetaOversized("Básica", "Off-White", "XL", 120.00, "Grandona");
-
-        System.out.println("=== FiapRide: Teste de Herança (Camiseta) ===");
-        // Atributos que vieram da classe Jaqueta
-        System.out.println("Modelo: " + co.getModelo());
-        System.out.println("Preço: R$ " + co.getPreco());
+        // Objeto da classe Pai
+        Jaqueta j1 = new Jaqueta("Jaqueta de Couro", "Preta", "XL", 600.00);
         
-        // Atributo só da CamisetaOversized
-        System.out.println("Caimento: " + co.getCaimento());
+        // Objeto da classe Filha 
+        CamisetaOversized c1 = new CamisetaOversized("Camiseta Heavy", "Bege", "M", 250.00, "Boxy");
 
-        // Testando a herança
-        co.aplicarDesconto(5);
-        System.out.println("Preço com Desconto de 5%: R$ " + co.getPreco());
+        System.out.println("=== Teste de Polimorfismo (Aula 6) ===");
+        
+        // Comportamento original 
+        System.out.println(j1.getModelo() + " -> " + j1.verificarCategoria());
+        
+        // Comportamento sobrescrito (da camiseta)
+        System.out.println(c1.getModelo() + " -> " + c1.verificarCategoria());
     }
 }

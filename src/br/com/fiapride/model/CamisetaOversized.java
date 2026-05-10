@@ -1,21 +1,27 @@
 package br.com.fiapride.model;
 
-// Herda de Jaqueta
 public class CamisetaOversized extends Jaqueta {
-    private String caimento; // Atributo específico da camiseta oversized
+    private String caimento;
 
-    // Construtor que usa o super para preencher a base da Jaqueta
     public CamisetaOversized(String modelo, String cor, String tamanho, double preco, String caimento) {
         super(modelo, cor, tamanho, preco);
         this.caimento = caimento;
     }
 
-    // Getter e Setter para o caimento
-    public String getCaimento() {
-        return caimento;
+    // Sobrescrevendo o comportamento da classe pai
+    @Override
+    public String verificarCategoria() {
+        if (this.getPreco() > 200.0) {
+            return "Categoria: Streetwear de rico";
+        } else {
+            return "Categoria: Streetwear básico";
+        }
     }
 
-    public void setCaimento(String caimento) {
-        this.caimento = caimento;
-    }
+    public String getCaimento() { 
+    	return caimento; 
+    	}
+    public void setCaimento(String caimento) { 
+    	this.caimento = caimento; 
+    	}
 }
