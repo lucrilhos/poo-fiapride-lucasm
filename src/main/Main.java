@@ -4,21 +4,18 @@ import br.com.fiapride.model.Jaqueta;
 
 public class Main {
     public static void main(String[] args) {
-        Jaqueta minhaJaqueta = new Jaqueta();
-        
-        minhaJaqueta.setModelo("Puffer");
-        minhaJaqueta.setCor("Magenta");
-        minhaJaqueta.setTamanho("XL");
-        minhaJaqueta.setPreco(550.00);
+        // Cria o objeto através do construtor
+        Jaqueta minhaJaqueta = new Jaqueta("Puffer", "Preta", "XL", 480.00);
 
-        System.out.println("=== FiapRide: Cadastro Encapsulado ===");
-        
+        System.out.println("=== Teste de Construtores ===");
         System.out.println("Modelo: " + minhaJaqueta.getModelo());
-        System.out.println("Preço Inicial: R$ " + minhaJaqueta.getPreco());
-        System.out.println("Status: " + minhaJaqueta.verificarCategoria());
+        System.out.println("Tamanho: " + minhaJaqueta.getTamanho());
+        System.out.println("Preço: R$ " + minhaJaqueta.getPreco());
 
-        // Testando o desconto
-        minhaJaqueta.aplicarDesconto(10);
-        System.out.println("Preço após 10% de desconto: R$ " + minhaJaqueta.getPreco());
+        // Testando a sobrecarga (cria uma classe vazia e depois usa os setters)
+        Jaqueta jaquetaReserva = new Jaqueta();
+        jaquetaReserva.setModelo("Cortavento");
+        
+        System.out.println("\nJaqueta Reserva: " + jaquetaReserva.getModelo());
     }
 }
