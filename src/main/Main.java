@@ -1,15 +1,23 @@
-package main; // código proprio só para implementação
+package main;
 
-import br.com.fiapride.model.Jaqueta;
+import br.com.fiapride.model.CamisetaOversized;
 
 public class Main {
     public static void main(String[] args) {
-        Jaqueta j1 = new Jaqueta("Jaqueta Jeans", "Azul", "M", 200.00);
+        // Objeto da classe Pai
+    	// Comentar a linha abaixo por causa do abstract na classe jaqueta
+        // Jaqueta j1 = new Jaqueta("Jaqueta de Couro", "Preta", "XL", 600.00);
+        
+        // Objeto da classe Filha
+    	CamisetaOversized c1 = new CamisetaOversized("Streetwear Pro", "Cinza", "G", 180.00, "Oversized");
 
-        System.out.println("=== Teste de Interface ===");
-        System.out.println("Preço original: R$ " + j1.getPreco());
-
-        // Usando o método que veio da Interface (void aplicarCupom)
-        j1.aplicarCupom("BEN10");
-    }
+        System.out.println("=== FiapRide: Teste de Classe Abstrata (Aula 8) ===");
+        System.out.println("Produto: " + c1.getModelo());
+        
+        // Testando o método obrigatório que a classe abstrata exigiu
+        c1.instrucoesLavagem();
+        
+        // Testando o cupom da interface
+        c1.aplicarCupom("BEN10");
+}
 }

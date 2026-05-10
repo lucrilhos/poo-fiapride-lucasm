@@ -7,14 +7,19 @@ public class CamisetaOversized extends Jaqueta {
         super(modelo, cor, tamanho, preco);
         this.caimento = caimento;
     }
+    
+  
+    @Override
+    public void instrucoesLavagem() {
+        System.out.println("Lavar com água fria para não encolher e nem criar bolinha " + this.caimento);
+    }
 
-    // Sobrescrevendo o comportamento da classe pai
     @Override
     public String verificarCategoria() {
         if (this.getPreco() > 200.0) {
-            return "Categoria: Streetwear de rico";
+            return "Categoria: Premium Streetwear";
         } else {
-            return "Categoria: Streetwear básico";
+            return "Categoria: Streetwear Essencial";
         }
     }
 
@@ -22,6 +27,6 @@ public class CamisetaOversized extends Jaqueta {
     	return caimento; 
     	}
     public void setCaimento(String caimento) { 
-    	this.caimento = caimento; 
+    	this.caimento = caimento;
     	}
-}
+} 

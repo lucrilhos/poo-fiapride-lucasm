@@ -1,7 +1,7 @@
 package br.com.fiapride.model;
 
 // Pra ficar mais próximo do comercial, implementar classe 'Promoção' em uma jaqueta a venda
-public class Jaqueta implements Promoção {
+public abstract class Jaqueta implements Promoção { // adição do abstract
 	// Fazendo encapsulamento
     private String modelo;
     private String cor;
@@ -17,8 +17,10 @@ public class Jaqueta implements Promoção {
         this.modelo = modelo;
         this.cor = cor;
         this.tamanho = tamanho;
-        setPreco(preco); // Usamos o setter para aproveitar a validação que já criamos!
+        setPreco(preco); // Para aproveitar a validação que já criamos
     }
+    
+    public abstract void instrucoesLavagem(); // toda peça de roupa deve dizer como é lavada
     
     @Override
     public void aplicarCupom(String cupom) {
